@@ -218,6 +218,10 @@ public class MoodleCourseDataAsyncLoader {
             attributes.put(
                     MoodleCourseAccess.MOODLE_COURSE_API_COURSE_IDS,
                     new ArrayList<>(courseData.keySet()));
+            
+            log.debug("****************print**********");
+            log.debug("****************print**********", attributes);
+
 
             final String quizzesJSON = callMoodleRestAPI(
                     restTemplate,
