@@ -225,9 +225,9 @@ public class MoodleCourseDataAsyncLoader {
 
             Iterator<String> itr = keys1.iterator(); 
             while(itr.hasNext()){ 
-                String key_next = itr.next()
+                String key_next = itr.next();
                 log.debug(key_next);
-                Collection<String> values1 = map.get(key_next)
+                Collection<String> values1 = map.get(key_next);
                 Iterator<String> itr2 = values1.iterator();  
                 while(itr2.hasNext()){
                     log.debug(itr2.next());
