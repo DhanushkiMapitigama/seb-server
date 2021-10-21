@@ -220,9 +220,20 @@ public class MoodleCourseDataAsyncLoader {
                     new ArrayList<>(courseData.keySet()));
             
             log.debug("****************print**********");
-            
-            for (LinkedMultiValueMap.Entry<String, String> entry : attributes.entrySet()) {
-                log.debug(entry.getKey() + "/" + entry.getValue());
+
+            MultiSet<String> keys1 = attributes.keys();
+
+            Iterator<String> itr = keys1.iterator(); 
+            while(itr.hasNext()){ 
+                String key_next = itr.next()
+                log.debug(key_next);
+                Collection<String> values1 = map.get(key_next)
+                Iterator<String> itr2 = values1.iterator();  
+                while(itr2.hasNext()){
+                    log.debug(itr2.next());
+                } 
+                log.debug("************************");
+
             }
             
             log.debug("****************print*************");
