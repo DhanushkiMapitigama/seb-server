@@ -19,6 +19,8 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.Iterator;
+import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
@@ -221,19 +223,31 @@ public class MoodleCourseDataAsyncLoader {
             
             log.debug("****************print**********");
 
-            MultiSet<String> keys1 = attributes.keys();
+//             MultiSet<String> keys1 = attributes.keys();
 
-            Iterator<String> itr = keys1.iterator(); 
-            while(itr.hasNext()){ 
-                String key_next = itr.next();
-                log.debug(key_next);
-                Collection<String> values1 = map.get(key_next);
-                Iterator<String> itr2 = values1.iterator();  
+//             Iterator<String> itr = keys1.iterator(); 
+//             while(itr.hasNext()){ 
+//                 String key_next = itr.next();
+//                 log.debug(key_next);
+//                 Collection<String> values1 = map.get(key_next);
+//                 Iterator<String> itr2 = values1.iterator();  
+//                 while(itr2.hasNext()){
+//                     log.debug(itr2.next());
+//                 } 
+//                 log.debug("************************");
+
+//             }
+            
+            Set<String> keysS = attributes.keySet();
+
+            for (String key : keysS) {
+                log.debug("Key = " + key);
+                List<String> list = (List<String>) attributes.get(key);
+
+                Iterator<String> itr2 = list.iterator();  
                 while(itr2.hasNext()){
                     log.debug(itr2.next());
                 } 
-                log.debug("************************");
-
             }
             
             log.debug("****************print*************");
