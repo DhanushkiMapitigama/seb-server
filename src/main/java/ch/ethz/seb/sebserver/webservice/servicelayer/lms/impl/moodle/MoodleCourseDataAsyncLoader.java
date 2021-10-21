@@ -221,7 +221,7 @@ public class MoodleCourseDataAsyncLoader {
             
             log.debug("****************print**********");
             
-            for (Map.Entry<String, String> entry : attributes.entrySet()) {
+            for (LinkedMultiValueMap.Entry<String, String> entry : attributes.entrySet()) {
                 log.debug(entry.getKey() + "/" + entry.getValue());
             }
             
