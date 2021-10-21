@@ -220,8 +220,12 @@ public class MoodleCourseDataAsyncLoader {
                     new ArrayList<>(courseData.keySet()));
             
             log.debug("****************print**********");
-            log.debug("****************print**********", attributes);
-
+            
+            for (Map.Entry<String, String> entry : attributes.entrySet()) {
+                log.debug(entry.getKey() + "/" + entry.getValue());
+            }
+            
+            log.debug("****************print*************");
 
             final String quizzesJSON = callMoodleRestAPI(
                     restTemplate,
